@@ -17,3 +17,29 @@ Widget customGradient({width, height, children}) {
     child: children,
   );
 }
+
+BoxDecoration customGradientOne = const BoxDecoration(
+  gradient: LinearGradient(
+    colors: [
+      Color.fromARGB(255, 218, 235, 255),
+      Color.fromARGB(255, 218, 252, 245),
+    ],
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    stops: [0.4, 0.7],
+    tileMode: TileMode.repeated,
+  ),
+);
+
+BoxDecoration customGradientTwo = const BoxDecoration(
+  gradient: LinearGradient(
+    colors: [
+      Color.fromARGB(201, 235, 244, 255),
+      Color.fromARGB(219, 218, 252, 245),
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomRight,
+    stops: [0.4, 0.7],
+    tileMode: TileMode.repeated,
+  ),
+);
