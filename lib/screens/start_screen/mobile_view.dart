@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:xd_adobe/common/content_box.dart';
 import 'package:xd_adobe/common/navBar.dart';
+import 'package:xd_adobe/common/toggleButton.dart';
+import 'package:xd_adobe/screens/tabViews/mobileViewItem/mobileTab.dart';
+import 'package:xd_adobe/widgets/custom_gradient.dart';
 import 'package:xd_adobe/widgets/shared/style.dart';
-import 'package:xd_adobe/screens/tabViews/mobileViewItem/mobileTabView.dart';
 import 'package:xd_adobe/widgets/waveClipper.dart';
 
 class MobileView extends StatefulWidget {
@@ -24,6 +26,7 @@ class _MobileViewState extends State<MobileView> {
     final image = widget.image;
     final btnText = widget.btnText;
     final width = widget.width;
+
     return ContentBoxWidget.mobileBody(context, items: [
       Container(
         margin: const EdgeInsets.only(bottom: 50),
@@ -38,18 +41,7 @@ class _MobileViewState extends State<MobileView> {
                         clipper: WaveClipper(waveDeep: 50, waveDeep2: 0),
                         child: Container(
                           width: width,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                Color.fromARGB(201, 235, 244, 255),
-                                Color.fromARGB(219, 218, 252, 245),
-                              ],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomRight,
-                              stops: [0.4, 0.7],
-                              tileMode: TileMode.repeated,
-                            ),
-                          ),
+                          decoration: customGradientTwo,
                           child: Container(
                               margin:
                                   const EdgeInsets.only(top: 80, bottom: 80),
@@ -73,7 +65,13 @@ class _MobileViewState extends State<MobileView> {
                                 )
                               ])),
                         )),
-                    const MobileTabView(),
+                    CustomToggleButton(
+                      tabViews: [
+                        firstTab(context),
+                        secondTab(context),
+                        thirdTab(context)
+                      ],
+                    ),
                   ]),
                 ),
               ),
@@ -118,7 +116,7 @@ class _MobileViewState extends State<MobileView> {
                   onPressed: () => {},
                   child: Text(
                     btnText!,
-                    style: TextStyle(color: defaultColor),
+                    style: const TextStyle(color: defaultColor),
                   ),
                 ),
               ),

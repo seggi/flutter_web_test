@@ -5,16 +5,18 @@ import 'package:xd_adobe/widgets/waveClipper.dart';
 
 Widget firstItemBox({width, height, number, text, text2, image}) {
   return Container(
-    height: 350,
     alignment: Alignment.center,
     padding: const EdgeInsets.all(10),
-    child: SizedBox(
-      width: width / 1.5,
+    child: Container(
+      width: 850,
+      height: 350,
+      alignment: Alignment.center,
       child: Stack(
+        alignment: AlignmentDirectional.center,
         children: [
           Positioned(
             left: 10,
-            bottom: 50,
+            bottom: 30,
             child: Row(
               children: [
                 Container(
@@ -44,29 +46,32 @@ Widget firstItemBox({width, height, number, text, text2, image}) {
             ),
           ),
           Positioned(
-            bottom: 0,
+            top: 150,
             left: 20,
             child: Row(
               children: [
-                RichText(
-                  text: TextSpan(
-                    text: '1. ',
-                    style: const TextStyle(
-                        fontSize: 100,
-                        fontWeight: FontWeight.w400,
-                        color: greyText),
-                    children: <TextSpan>[
-                      TextSpan(
-                          text: text2,
-                          style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w300,
-                              color: greyText)),
-                    ],
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  child: RichText(
+                    text: TextSpan(
+                      text: '1. ',
+                      style: const TextStyle(
+                          fontSize: 100,
+                          fontWeight: FontWeight.w400,
+                          color: greyText),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: text2,
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w300,
+                                color: greyText)),
+                      ],
+                    ),
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 20, left: 100),
+                  margin: const EdgeInsets.only(top: 0, left: 100),
                   child: Image.asset(
                     image,
                     height: 200.0,
@@ -174,23 +179,27 @@ Widget secondItemBox({width, height, number, text, image}) {
 
 Widget thirdItemBox({width, height, number, text, image}) {
   return Container(
-    height: 500,
-    margin: const EdgeInsets.only(left: 280, top: 20),
+    alignment: Alignment.center,
     child: Container(
-      width: width / 1.5,
+      height: 500,
+      width: 800,
+      alignment: Alignment.center,
       child: Stack(
+        alignment: Alignment.center,
         children: [
           Positioned(
-            top: 15,
+            top: 10,
+            left: 0,
+            width: 250,
+            height: 250,
             child: Container(
-              width: 250,
-              height: 250,
               decoration: BoxDecoration(
                   color: grey50, borderRadius: BorderRadius.circular(250)),
             ),
           ),
           Container(
             margin: const EdgeInsets.only(left: 100, top: 30),
+            alignment: Alignment.topCenter,
             child: Row(
               children: [
                 const Text('3.',
@@ -211,12 +220,13 @@ Widget thirdItemBox({width, height, number, text, image}) {
             ),
           ),
           Positioned(
-            right: 400,
+            right: 30,
+            top: 0,
             child: Container(
               alignment: Alignment.center,
               child: Image.asset(
                 image,
-                height: 250.0,
+                height: 300.0,
                 fit: BoxFit.cover,
               ),
             ),

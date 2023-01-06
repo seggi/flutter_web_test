@@ -4,7 +4,6 @@ import 'package:xd_adobe/widgets/shared/separator.dart';
 
 Widget firstTab(context, {width, height}) {
   final width = MediaQuery.of(context).size.width;
-  final height = MediaQuery.of(context).size.width;
   return SizedBox(
     child: Stack(
       children: [
@@ -27,34 +26,32 @@ Widget firstTab(context, {width, height}) {
               image: 'assets/images/undraw_task_31wc@2x.png'),
         ),
         Container(
-          margin: const EdgeInsets.only(top: 820),
+          margin: const EdgeInsets.only(top: 850),
           alignment: Alignment.bottomCenter,
           child: thirdItemBox(
               width: width,
               text: 'Mit nur einem Klick bewerben',
               image: 'assets/images/undraw_personal_file_222m.png'),
         ),
-        Positioned(
-          bottom: 710,
-          left: 400,
+        Container(
+          alignment: Alignment.center,
+          height: 300,
+          margin: const EdgeInsets.only(top: 300),
           child: Container(
-            width: width - 200,
-            height: 400,
-            alignment: Alignment.centerLeft,
+            margin: const EdgeInsets.only(right: 280),
+            width: 380,
             child: Image.asset(
               'assets/images/Gruppe_1821.png',
-              height: 320,
               fit: BoxFit.cover,
             ),
           ),
         ),
-        Positioned(
-          bottom: 320,
-          left: 520,
+        Container(
+          alignment: Alignment.center,
+          margin: const EdgeInsets.only(top: 680),
           child: Container(
-            width: 500,
-            height: 500,
-            alignment: Alignment.center,
+            margin: const EdgeInsets.only(right: 100),
+            height: 190,
             child: Image.asset(
               'assets/images/Gruppe_1822.png',
               height: 180,
@@ -96,27 +93,25 @@ Widget secondTab(context, {width, height}) {
             text: 'Wähle deinen neuen Mitarbeiter aus',
             image: 'assets/images/undraw_swipe_profiles1_i6mr@2x.png'),
       ),
-      Positioned(
-        bottom: 710,
-        left: 400,
+      Container(
+        alignment: Alignment.center,
+        height: 300,
+        margin: const EdgeInsets.only(top: 300),
         child: Container(
-          width: width - 200,
-          height: 400,
-          alignment: Alignment.centerLeft,
+          margin: const EdgeInsets.only(right: 280),
+          width: 380,
           child: Image.asset(
             'assets/images/Gruppe_1821.png',
-            height: 320,
             fit: BoxFit.cover,
           ),
         ),
       ),
-      Positioned(
-        bottom: 320,
-        left: 520,
+      Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.only(top: 680),
         child: Container(
-          width: 500,
-          height: 500,
-          alignment: Alignment.center,
+          margin: const EdgeInsets.only(right: 100),
+          height: 190,
           child: Image.asset(
             'assets/images/Gruppe_1822.png',
             height: 180,
@@ -157,27 +152,25 @@ Widget thirdTab(context, {width, height}) {
             text: 'Vermittlung nach Provision oder Stundenlohn',
             image: 'assets/images/undraw_business_deal_cpi9@2x.png'),
       ),
-      Positioned(
-        bottom: 710,
-        left: 400,
+      Container(
+        alignment: Alignment.center,
+        height: 300,
+        margin: const EdgeInsets.only(top: 300),
         child: Container(
-          width: width - 200,
-          height: 400,
-          alignment: Alignment.centerLeft,
+          margin: const EdgeInsets.only(right: 280),
+          width: 380,
           child: Image.asset(
             'assets/images/Gruppe_1821.png',
-            height: 320,
             fit: BoxFit.cover,
           ),
         ),
       ),
-      Positioned(
-        bottom: 320,
-        left: 520,
+      Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.only(top: 680),
         child: Container(
-          width: 500,
-          height: 500,
-          alignment: Alignment.center,
+          margin: const EdgeInsets.only(right: 100),
+          height: 190,
           child: Image.asset(
             'assets/images/Gruppe_1822.png',
             height: 180,

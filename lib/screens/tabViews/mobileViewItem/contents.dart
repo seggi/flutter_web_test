@@ -9,6 +9,7 @@ Widget firstItemBox({width, height, number, text, text2, image}) {
     width: width,
     padding: const EdgeInsets.all(10),
     child: Stack(
+      alignment: AlignmentDirectional.centerStart,
       children: [
         Positioned(
           right: 300,
@@ -76,77 +77,30 @@ Widget firstItemBox({width, height, number, text, text2, image}) {
 }
 
 Widget secondItemBox({width, height, number, text, image}) {
-  return Column(
-    children: [
-      ClipPath(
-        clipper: WaveClipperThree(),
-        child: Container(
-          height: 50,
-          width: width,
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(219, 218, 252, 245),
-                Color.fromARGB(201, 235, 244, 255),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              stops: [0.4, 0.7],
-              tileMode: TileMode.repeated,
-            ),
-          ),
-        ),
-      ),
-      Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(219, 218, 252, 245),
-              Color.fromARGB(201, 235, 244, 255),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [0.4, 0.7],
-            tileMode: TileMode.repeated,
-          ),
-        ),
-        child: Column(children: [
-          Container(
+  return Container(
+    width: width,
+    child: Column(
+      children: [
+        ClipPath(
+          clipper: WaveClipperThree(),
+          child: Container(
+            height: 50,
             width: width,
-            margin: const EdgeInsets.only(left: 50),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  "2.",
-                  style: tabTextStyle(size: 120, fontWeight: FontWeight.w400),
-                ),
-                horizontalSpaceSmall,
-                Container(
-                  width: 250,
-                  margin: const EdgeInsets.only(top: 70),
-                  child: Text(
-                    text,
-                    style: tabTextStyle(size: 18, fontWeight: FontWeight.w300),
-                  ),
-                )
-              ],
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(219, 218, 252, 245),
+                  Color.fromARGB(201, 235, 244, 255),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                stops: [0.4, 0.7],
+                tileMode: TileMode.repeated,
+              ),
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(left: 20, bottom: 20),
-            child: Image.asset(
-              image,
-              height: 180.0,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ]),
-      ),
-      ClipPath(
-        clipper: WaveClipperFour(),
-        child: Container(
-          height: 50,
+        ),
+        Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
@@ -159,9 +113,60 @@ Widget secondItemBox({width, height, number, text, image}) {
               tileMode: TileMode.repeated,
             ),
           ),
+          child: Column(children: [
+            Container(
+              width: width,
+              margin: const EdgeInsets.only(left: 50),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "2.",
+                    style: tabTextStyle(size: 120, fontWeight: FontWeight.w400),
+                  ),
+                  horizontalSpaceSmall,
+                  Container(
+                    width: 250,
+                    margin: const EdgeInsets.only(top: 70),
+                    child: Text(
+                      text,
+                      style:
+                          tabTextStyle(size: 18, fontWeight: FontWeight.w300),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 20, bottom: 20),
+              child: Image.asset(
+                image,
+                height: 180.0,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ]),
         ),
-      ),
-    ],
+        ClipPath(
+          clipper: WaveClipperFour(),
+          child: Container(
+            height: 50,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(219, 218, 252, 245),
+                  Color.fromARGB(201, 235, 244, 255),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                stops: [0.4, 0.7],
+                tileMode: TileMode.repeated,
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
   );
 }
 
