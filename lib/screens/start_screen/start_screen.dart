@@ -16,6 +16,7 @@ class _StartScreenState extends State<StartScreen> {
     const String title = 'Deine Job website';
     const String image = 'assets/images/undraw_agreement_aajr.png';
     const String btnText = "Kostenlos Registrierieren";
+
     return LayoutBuilder(builder: (context, constraints) {
       var width = constraints.maxWidth;
       if (width > targetDesktop) {
@@ -26,7 +27,7 @@ class _StartScreenState extends State<StartScreen> {
           width: width,
         );
       } else if (width > targetMobile && constraints.maxWidth < targetDesktop) {
-        return MobileView(
+        return DesktopView(
           title: title,
           image: image,
           btnText: btnText,

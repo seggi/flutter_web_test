@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 
 // Custom colors
 const Color defaultColor = Color(0xFFFFFFFF);
-const Color lightBlue = Color.fromARGB(0, 93, 161, 244);
-
-const Color blue = Colors.blue;
-const Color black = Colors.black;
 const Color grey = Color.fromARGB(255, 113, 116, 118);
 
 const Color lightGreen = Color.fromARGB(255, 224, 255, 249);

@@ -1,36 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:xd_adobe/screens/tabViews/desktopViewItem/desktopTab.dart';
 import 'package:xd_adobe/widgets/shared/separator.dart';
 import 'package:xd_adobe/widgets/shared/style.dart';
 
-class DesktopTabView extends StatefulWidget {
-  const DesktopTabView({super.key});
+class CustomToggleButton extends StatefulWidget {
+  final List<dynamic>? tabViews;
+  const CustomToggleButton({super.key, this.tabViews});
 
   @override
-  State<DesktopTabView> createState() => _DesktopTabViewState();
+  State<CustomToggleButton> createState() => _CustomToggleButtonState();
 }
 
-class _DesktopTabViewState extends State<DesktopTabView> {
+class _CustomToggleButtonState extends State<CustomToggleButton> {
   List<bool> isSelected = [true, false, false];
   ScrollController scrollController = ScrollController();
   late int currentTab = 0;
 
-  late List<dynamic> tabViews = [
-    firstTab(context),
-    secondTab(context),
-    thirdTab(context)
-  ];
-
   @override
   void initState() {
     scrollController = ScrollController();
-
     super.initState();
   }
 
   @override
   void dispose() {
-    scrollController.dispose(); // dispose the controller
+    scrollController.dispose();
     super.dispose();
   }
 
@@ -52,7 +45,6 @@ class _DesktopTabViewState extends State<DesktopTabView> {
               child: ToggleButtons(
                 isSelected: isSelected,
                 selectedColor: Colors.white,
-                // color: teal,
                 fillColor: lightGreen200,
                 splashColor: const Color.fromARGB(255, 123, 215, 206),
                 highlightColor: const Color.fromARGB(255, 123, 215, 206),
@@ -119,44 +111,10 @@ class _DesktopTabViewState extends State<DesktopTabView> {
     });
   }
 
-  Widget customToggleBtn(setState, scrollController,
-      {isSelected, currentTab, List<Widget> children = const []}) {
-    return ToggleButtons(
-        isSelected: isSelected,
-        selectedColor: Colors.white,
-        // color: teal,
-        fillColor: const Color.fromARGB(255, 123, 215, 206),
-        splashColor: const Color.fromARGB(255, 123, 215, 206),
-        highlightColor: const Color.fromARGB(255, 123, 215, 206),
-        textStyle: const TextStyle(fontWeight: FontWeight.w500),
-        renderBorder: true,
-        borderWidth: 1,
-        borderRadius: BorderRadius.circular(10),
-        selectedBorderColor: const Color.fromARGB(255, 123, 215, 206),
-        children: [...children],
-        onPressed: (int newIndex) {
-          currentTab = newIndex;
-          setState(() {
-            for (int index = 0; index < isSelected.length; index++) {
-              if (index == newIndex) {
-                isSelected[index] = true;
-
-                scrollController.animateTo(200.0,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOutCirc);
-              } else {
-                isSelected[index] = false;
-                scrollController.animateTo(-100.0,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOutCirc);
-              }
-            }
-          });
-        });
-  }
-
+// Display all tab
   _displayView(currentTab) {
-    for (int index = 0; index < tabViews.length; index++) {
+    final tabViews = widget.tabViews;
+    for (int index = 0; index < tabViews!.length; index++) {
       if (currentTab == index) {
         return tabViews[index];
       }

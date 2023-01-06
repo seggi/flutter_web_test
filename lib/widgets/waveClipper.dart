@@ -34,63 +34,9 @@ class WaveClipper extends CustomClipper<Path> {
   }
 }
 
-class WaveClipperTwo extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    double width = size.width;
-    double height = size.height;
-    double offset = 130.0;
-    Path path = Path();
-    path.moveTo(0, height - (height - offset));
-    path.lineTo(0, height);
-    path.lineTo(width, height);
-    path.lineTo(width, height - (height - offset));
-    path.quadraticBezierTo(
-        3 * width / 4, height - 360, width - 170, height - (height - 130));
-    path.quadraticBezierTo(
-        3 * width / 6, height - 240, width / 4, height - (height - 120));
-    path.quadraticBezierTo(width / 6, 100, 0, height - (height - offset));
-
-    path.lineTo(width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
-  }
-}
-
 class WaveClipperThree extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    // Path path = new Path();
-    // path.lineTo(0, size.height * 0.85); //vertical line
-    // path.cubicTo(size.width / 3, size.height, 2 * size.width / 3,
-    //     size.height * 0.7, size.width, size.height * 0.75); //cubic curve
-    // path.lineTo(size.width, 0); //vertical line
-    // return path;
-    // ? bottom
-    // var path = Path();
-    // path.lineTo(0, 220);
-    // path.quadraticBezierTo(size.width / 4, 160, size.width / 2, 175);
-    // path.quadraticBezierTo(3 / 4 * size.width, 190, size.width, 130);
-    // path.lineTo(size.width, 0);
-    // path.close();
-    // return path;
-
-    // ! Right one
-    // Path path = Path();
-    // path.lineTo(0, size.height);
-    // path.quadraticBezierTo(
-    //     size.width / 4, size.height - 40, size.width / 2, size.height - 20);
-    // path.quadraticBezierTo(
-    //     3 / 4 * size.width, size.height, size.width, size.height - 30);
-    // path.lineTo(size.width, 0);
-    // path.close();
-    // return path;
-
     var path = new Path();
     path.lineTo(0.0, 20);
 

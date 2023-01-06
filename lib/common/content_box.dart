@@ -15,7 +15,7 @@ class ContentBoxWidget {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
             height: height,
             width: width,
             child: Stack(
