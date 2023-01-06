@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:xd_adobe/common/content_box.dart';
 import 'package:xd_adobe/common/navBar.dart';
+import 'package:xd_adobe/common/toggleButton.dart';
+import 'package:xd_adobe/screens/tabViews/mobileViewItem/mobileTab.dart';
 import 'package:xd_adobe/widgets/shared/style.dart';
-import 'package:xd_adobe/screens/tabViews/mobileViewItem/mobileTabView.dart';
 import 'package:xd_adobe/widgets/waveClipper.dart';
 
 class MobileView extends StatefulWidget {
@@ -73,7 +74,13 @@ class _MobileViewState extends State<MobileView> {
                                 )
                               ])),
                         )),
-                    const MobileTabView(),
+                    CustomToggleButton(
+                      tabViews: [
+                        firstTab(context),
+                        secondTab(context),
+                        thirdTab(context)
+                      ],
+                    ),
                   ]),
                 ),
               ),
