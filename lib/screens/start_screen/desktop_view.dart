@@ -3,12 +3,11 @@ import 'package:flutter/rendering.dart';
 import 'package:xd_adobe/common/content_box.dart';
 import 'package:xd_adobe/common/navBar.dart';
 import 'package:xd_adobe/common/toggleButton.dart';
+import 'package:xd_adobe/screens/tabViews/desktopViewItem/desktopTab.dart';
 import 'package:xd_adobe/widgets/custom_gradient.dart';
 import 'package:xd_adobe/widgets/shared/separator.dart';
 import 'package:xd_adobe/widgets/shared/style.dart';
 import 'package:xd_adobe/widgets/waveClipper.dart';
-
-import '../tabViews/desktopViewItem/desktopTab.dart';
 
 class DesktopView extends StatefulWidget {
   final String? title;
