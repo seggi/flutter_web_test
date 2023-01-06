@@ -4,7 +4,6 @@ import 'package:xd_adobe/common/content_box.dart';
 import 'package:xd_adobe/common/navBar.dart';
 import 'package:xd_adobe/common/toggleButton.dart';
 import 'package:xd_adobe/screens/tabViews/desktopViewItem/desktopTab.dart';
-import 'package:xd_adobe/widgets/custom_gradient.dart';
 import 'package:xd_adobe/widgets/shared/separator.dart';
 import 'package:xd_adobe/widgets/shared/style.dart';
 import 'package:xd_adobe/widgets/waveClipper.dart';
@@ -38,7 +37,6 @@ class _DesktopViewState extends State<DesktopView> {
         builder: (BuildContext context, BoxConstraints viewportConstraints) {
           return NotificationListener<ScrollNotification>(
             onNotification: (scrollNotification) {
-              // Get position when scrolling the page
               if (_scrollController.position.userScrollDirection ==
                   ScrollDirection.reverse) {
                 setState(() {
@@ -71,27 +69,35 @@ class _DesktopViewState extends State<DesktopView> {
                       child: Container(
                         width: width,
                         height: height - 300,
-                        decoration: customGradientOne,
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromARGB(255, 218, 235, 255),
+                              Color.fromARGB(255, 218, 252, 245),
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                            stops: [0.4, 0.7],
+                            tileMode: TileMode.repeated,
+                          ),
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                                width: width / 4,
+                                width: width / 5,
                                 margin: const EdgeInsets.only(top: 180),
                                 child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      SizedBox(
-                                        width: 200,
-                                        child: Text(
-                                          title!,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 45),
-                                          textAlign: TextAlign.start,
-                                        ),
+                                      Text(
+                                        title!,
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 45),
+                                        textAlign: TextAlign.start,
                                       ),
                                       verticalSpaceLarge,
                                       Container(
@@ -118,6 +124,7 @@ class _DesktopViewState extends State<DesktopView> {
                                         ),
                                       ),
                                     ])),
+                            horizontalSpaceRegular,
                             ClipOval(
                               child: Container(
                                 color: Colors.white,
@@ -131,13 +138,11 @@ class _DesktopViewState extends State<DesktopView> {
                           ],
                         ),
                       )),
-                  CustomToggleButton(
-                    tabViews: [
-                      firstTab(context),
-                      secondTab(context),
-                      thirdTab(context)
-                    ],
-                  ),
+                  CustomToggleButton(tabViews: [
+                    firstTab(context),
+                    secondTab(context),
+                    thirdTab(context)
+                  ]),
                 ],
               ),
             ),
