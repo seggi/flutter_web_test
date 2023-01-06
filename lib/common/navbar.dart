@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:xd_adobe/widgets/custom_gradient.dart';
 import 'package:xd_adobe/widgets/shared/separator.dart';
 import 'package:xd_adobe/widgets/shared/style.dart';
-
-import '../../widgets/custom_gradient.dart';
 
 class Navbar extends StatefulWidget {
   final String? scrollOption;
